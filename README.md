@@ -1,16 +1,14 @@
 
 
-denden
+##Name
+AtCoder
 ====
 
-Overview
-atocoderに関する情報
-
+##Overview
 これは電電がatcoderでの研鑽を記録するためのリポジトリである．
 
-こちらのAtCoder Problemsで進捗が確認できます．
-http://beta.kenkoooo.com/atcoder/?user=&rivals=&kind=category
-
+こちらの[AtCoder Problems]http://beta.kenkoooo.com/atcoder/?user=&rivals=&kind=category
+で進捗が確認できます．
 
 User ID:denden12
 を入力してください
