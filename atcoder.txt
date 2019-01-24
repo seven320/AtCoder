@@ -1,3 +1,0 @@
-atcoder
-login name denden12
-pass 180C
