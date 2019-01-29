@@ -1,10 +1,8 @@
 
 
-##Name
 AtCoder
 ====
 
-##Overview
 これは電電がatcoderでの研鑽を記録するためのリポジトリである．
 
 こちらの
