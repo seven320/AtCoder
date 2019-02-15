@@ -32,21 +32,29 @@ void permutation1(int pos,int n){
 
 }
 
-#include<algorithm>
-
-int perm2[MAX_N];
-
-void permutation2(int n){
-  for(int i=0;i<n;i++){
-  perm2[i] = i;
-  }
-  do{
-
-  }while(next_permutation(perm2,perm2+n));
-  return ;
-}
+// #include<algorithm>
+//
+// int perm2[MAX_N];
+//
+// void permutation2(int n){
+//   for(int i=0;i<n;i++){
+//   perm2[i] = i;
+//   }
+//   do{
+//
+//   }while(next_permutation(perm2,perm2+n));
+//   return ;
+// }
 
 int main(){
-  permutation1(3,5);
+  for(int i=0;i<10;i++){
+      perm[i] = i;
+  }
+
+
+  permutation1(0,1);
+  for(int i=0;i<10;i++){
+    cout<<perm[i];
+  }
   return 0;
 }
