@@ -1,0 +1,30 @@
+/Users/kenkato/python/atcoder/118/B_answer.cpp:22:1: error: expected expression
+if (cnt[i] ++ans;
+^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:23:1: error: expected ';' in 'for' statement specifier
+} }
+^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:23:1: error: expected expression
+/Users/kenkato/python/atcoder/118/B_answer.cpp:24:9: error: expected ')'
+0; i < M; ++i) { == N) {
+        ^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:21:18: note: to match this '('
+int ans = 0; for (int i =
+                 ^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:24:14: error: expected ';' after expression
+0; i < M; ++i) { == N) {
+             ^
+             ;
+/Users/kenkato/python/atcoder/118/B_answer.cpp:24:13: error: use of undeclared identifier 'i'
+0; i < M; ++i) { == N) {
+            ^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:24:14: error: expected expression
+0; i < M; ++i) { == N) {
+             ^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:25:23: error: expected '}'
+cout << ans << endl; }
+                      ^
+/Users/kenkato/python/atcoder/118/B_answer.cpp:13:12: note: to match this '{'
+int main() {
+           ^
+8 errors generated.
