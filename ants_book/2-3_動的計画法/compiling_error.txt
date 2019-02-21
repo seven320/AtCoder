@@ -1,4 +1,0 @@
-/Users/kenkato/python/atcoder/ants_book/2-3_動的計画法/napsac_memo.cpp:17:5: error: variable length array declaration not allowed at file scope
-int dp[N_MAX+1][10001];
-    ^  ~~~~~~~
-1 error generated.
