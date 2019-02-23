@@ -11,24 +11,10 @@ AtCoder
 [AtCoder](https://atcoder.jp/?lang=ja)については公式ページみてください．
 
 User ID:denden12
-を入力してください
+を入力してください.
 
+[テストケース](https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0)
 
-## Description
-
-## Demo
-
-## VS.
-
-## Requirement
-
-## Usage
-
-## Install
-
-## Contribution
-
-## Licence
 
 ## Author
 [seven320](https://github.com/seven320)
