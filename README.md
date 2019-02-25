@@ -6,7 +6,7 @@ AtCoder
 これは電電がatcoderでの研鑽を記録するためのリポジトリである．
 
 こちらの
-[AtCoder_problems](http://beta.kenkoooo.com/atcoder/?user=&rivals=&kind=category)
+[AtCoder_problems](https://kenkoooo.com/atcoder/?user=denden12&rivals=&kind=category)
 で進捗が確認できます．
 [AtCoder](https://atcoder.jp/?lang=ja)については公式ページみてください．
 
