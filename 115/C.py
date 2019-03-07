@@ -10,14 +10,12 @@ h = []
 for i in range(n):
     h.append(int(input()))
 
-tree_count = {}
-for i in range(n):
-    if h[i] in tree_count.keys():
-        tree_count[h[i]] += 1
-    else:
-        tree_count[h[i]] = 1
+h.sort()
+# print(h)
+max_tree = []
+min_tree = []
+ans = 10**9
+for i in range(n-k+1):
+    ans = min(h[i+k-1]-h[i],ans)
 
-tree_count = sorted(tree_count,key=tree_count.item() x:x[1])
-print(tree_count)
-# for key in tree_count.keys():
-#     count = tree_count[key]
+print(ans)

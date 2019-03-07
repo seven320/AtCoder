@@ -6,44 +6,44 @@ import numpy as np
 import random
 
 d,g = map(int, input().split())
-P = [0]
-C = [0]
+P = []
+C = []
 for i in range(d):
     p,c = map(int,input().split())
     P.append(p)
     C.append(c)
 
-# j = max(C)
-# i = d
+completed = []
+for i in range(d):
+    score = P[i]*(i+1)*100+C[i]
+    completed.append(score)
 
-problems = sum(P)
-dp = [[0 for i in range(problems+1)] for j in range(d+1)]
+def to_digital(num):
+    dig = [0]*d
+    for i in range(d):
+        dig[i]=num%2
+        num //= 2
+    return dig
 
+ans = 10**9
+for i in range(2**d):
+    digital = to_digital(i)
+    score = 0
+    count = 0
+    for j in range(d):
+        if digital[j]:
+            score += completed[j]
+            count += P[j]
 
+    for j in range(d)[::-1]:
+        if digital[j]==0:
+            for k in range(P[j]-1):
+                if g<=score:
+                    break
+                else:
+                    count += 1
+                    score += 100*(j+1)
+        if g<=score:
+            ans = min(ans,count)
 
-for i in range(1,d+1):
-    for j in range(1,max(P)+1):
-        if j < P[i]:
-            dp[i][j] = (j)*100*(i)
-        elif j==P[i]:
-            dp[i][j] = (j)*(i)*100+C[i]
-        else:
-            pass
-
-
-
-dp2 = copy.deepcopy(dp)
-for i in range(1,d+1):
-    for j in range(1,problems):
-        if dp2[i][j] == 0:
-            print(dp[i][P[i]])
-            dp2[i][j] = max(dp2[i-1][j],dp[i][P[i]]+dp2[i-1][j-P[i]])
-        else:
-            dp2[i][j] = max(dp[i][j],dp[i-1][j])
-print(dp)
-print(dp2)
-
-for i in range(problems):
-    if dp[-1][i] >= g:
-        print(i)
-        exit()
+print(ans)
