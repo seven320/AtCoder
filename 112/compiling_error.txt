@@ -1,0 +1,9 @@
+/Users/kenkato/python/atcoder/112/C.cpp:16:31: error: a space is required between consecutive right angle brackets (use '> >')
+   std::vector<std::vector<int>> datas{{1, 2, 3}, {4, 5, 6}};
+                              ^~
+                              > >
+/Users/kenkato/python/atcoder/112/C.cpp:16:39: error: expected ';' at end of declaration
+   std::vector<std::vector<int>> datas{{1, 2, 3}, {4, 5, 6}};
+                                      ^
+                                      ;
+2 errors generated.
