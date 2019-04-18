@@ -3,7 +3,7 @@
 AtCoder
 ====
 
-これは電電がatcoderでの研鑽を記録するためのリポジトリである．
+これは電電がAtCoderでの研鑽を記録するためのリポジトリである．
 
 こちらの
 [AtCoder_problems](https://kenkoooo.com/atcoder/?user=denden12&rivals=&kind=category)
