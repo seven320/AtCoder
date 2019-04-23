@@ -1,38 +1,40 @@
-#encoding utf-8
-import sympy
+# encoding:utf-8
+import copy
+import random
+import bisect #bisect_left　これで二部探索の大小検索が行える
+import fractions #最小公倍数などはこっち
+import math
+import itertools
 
-n,m = map(int, input().split())
 
-#pfs prime factors　素因数
-# pfs = sympy.factorint(m)
-# print(pfs.keys())
-
-
-def yakusuu(m):
-    num = int(m)
-    yakusuu_array = []
-
-    for i in range(1,num):
-        if num % i == 0:
-            yakusuu_array.append(i)
-    yakusuu_array.append(m)
-    return yakusuu_array
-
-def DB(count,n,m):
-    if str(n)+str(m) in database:
-        count = database[str(n)+str(m)]
-    else:
-    # print(n,m)
-        if n == 1:
-            count += 1
-        elif m == 1:
-            count += 1
+N,M = map(int,input().split())
+primes = {}
+# primes[1] = 1
+tmp = 2
+while M != 1:
+    if M%tmp==0:
+        M //= tmp
+        if tmp in primes.keys():
+            primes[tmp] += 1
         else:
-            bunkai = yakusuu(m)
-            for i in range(len(bunkai)):
-                count = DB(count, n-1, int(m/bunkai[i]))
-        dababase[str(n)+str(m)] = count
-    return count
+            primes[tmp] = 1
+    else:
+        tmp += 1
 
-database = {}
-print(DB(0,n,m))
+def combination(n,r,rtn):
+    if r > 0 and n > 0:
+        for i in range(r):
+            rtn += combination(n-1,r-i,rtn)
+    else:
+        return 1
+
+
+
+# print(primes)
+ans = 1
+for key in primes.keys():
+    ans *= combination(N,primes[key])
+    if ans > (10**9+7):
+        ans = ans % (10**9+7)
+
+print(ans)
