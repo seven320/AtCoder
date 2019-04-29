@@ -15,3 +15,7 @@ def factorint(N):
     table_ = Counter(table)
     print(table_)
     return table_
+
+
+for i in range(10):
+    factorint(i)

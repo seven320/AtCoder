@@ -24,5 +24,4 @@ def find_primes(n):
     # primes = primes + candidates
     return primes
 
-for i in range(100):
-    print(find_primes(i))
+print(find_primes(10**4))
