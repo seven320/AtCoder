@@ -10,6 +10,18 @@ N = int(input())
 H = [int(i) for i in input().split()]
 
 
+max_h = [-1 for i in range(N)]
+max_h[0] = H[0]
+for i in range(1,N):
+    max_h[i] = max(max_h[i-1],H[i])
+    
+ans = 0
+for i in range(N):
+    if H[i] >= max_h[i]:
+        ans += 1
+print(ans)
+
+"""
 ans = 0
 for i in range(N):
     base = H[i]
@@ -25,5 +37,5 @@ for i in range(N):
                 break
     if check:
         ans += 1
-
 print(ans)
+"""
