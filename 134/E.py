@@ -6,34 +6,28 @@ import fractions #最小公倍数などはこっち
 import math
 import sys
 import bisect
+from collections import deque
 
 mod = 10**9+7
 sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 def LI(): return list(map(int, sys.stdin.readline().split()))
+N = int(input())
+A = [0 for i in range(N)]
+for i in range(N):
+    A[i] = int(input())
 
-N,M = LI()
-ab = [[] for i in range(M)]
-for i in range(M):
-    a,b = LI()
-    a -= 1
-    b -= 1
-    ab[i] = [a,b]
-
-
-ans = 0
-ab = sorted(ab,key = lambda x:x[1])
-ans += 1
-a,b = ab[0]
-cutting = b-1
-for i in range(1,M):
-    a,b = ab[i]
-    if a <= cutting < b:
-        pass
+ans = 1
+tops = deque([A[0]])
+tops_cnt = 1
+for i in range(1,N):
+    # print(tops)
+    swap_i = bisect.bisect_left(tops,A[i])
+    if swap_i:
+        tops[swap_i-1] = A[i]
     else:
-        cutting = b-1
+        tops.appendleft(A[i])
         ans += 1
+        tops_cnt += 1
 
 print(ans)
-
-# print(ab)

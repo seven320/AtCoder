@@ -1,58 +1,51 @@
 # encoding:utf-8
-
 import copy
-import numpy as np
 import random
+import bisect #bisect_left　これで二部探索の大小検索が行える
+import fractions #最小公倍数などはこっち
+import math
+import sys
+import bisect
+import numpy as np
 
-n,k = map(int,input().split())
+mod = 10**9+7
+sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
-a = [int(i) for i in input().split()]
+def LI(): return list(map(int, sys.stdin.readline().split()))
 
+N,K = LI()
+A = LI()
 
-# for i in range(len(a)):
+cnt_digits = np.zeros(50)
 
-sorted_a = sorted(a)
-max_digit = 0
-
-
-if k == 0:
-    answer = 0
-    for i in range(len(a)):
-        answer += a[i]
-
-else:
-    while k >= 1:
-        max_digit += 1
-        k = k // 2
-
-    # print(max_digit)
-    def to_2_from_10(num):
-        num_digit = [0]*40
-        count = 0
-        while num >= 1:
-
-            if num % 2 == 1:
-                num_digit[count] = 1
-            else:
-                pass
-            num = num // 2
-            count += 1
-        # num_digit.reverse()
-        return num_digit
-
-    sum_digit = [0]*40
-    for i in range(n):
-        digit = to_2_from_10(a[i])
-        # print(digit)
-        for j in range(max_digit):
-            if digit[j] == 0:
-                sum_digit[j] += 1
-
-    answer = 0
-    for i in range(len(sum_digit)):
-        if i >= max_digit:
-            answer += 2**i*sum_digit[i]
+def num2digit(num):
+    digits = np.zeros(50)
+    for i in range(50):
+        if num <= 0:
+            break
         else:
-            answer += 2**i*max(sum_digit[i],n-sum_digit[i])
-
-print(answer)
+            digits[i] = num % 2
+            num = num // 2
+    return digits
+for i in range(N):
+    cnt_digits += num2digit(A[i])
+cnt = 0
+k = copy.deepcopy(K)
+for i in range(50):
+    if k <= 0:
+        break
+    else:
+        cnt += 1
+        k = k //2
+ans = 0
+# print(cnt_digits)
+for k_i in reversed(range(50)):
+    if k_i <= cnt:
+        pass
+        if cnt_digits[k_i] > N - cnt_digits[k_i]:
+            ans += cnt_digits[k_i] * (2 ** k_i)
+        else:
+            ans += (N - cnt_digits[k_i]) * (2 ** k_i)
+    else:
+        ans += cnt_digits[k_i] * (2 ** k_i)
+print(int(ans))

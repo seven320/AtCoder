@@ -5,35 +5,29 @@ import bisect #bisect_left　これで二部探索の大小検索が行える
 import fractions #最小公倍数などはこっち
 import math
 import sys
-import bisect
 
 mod = 10**9+7
 sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-N,M = LI()
-ab = [[] for i in range(M)]
-for i in range(M):
-    a,b = LI()
-    a -= 1
-    b -= 1
-    ab[i] = [a,b]
+S = str(input())
+count = {}
+for i in range(len(S)):
+    if S[i] in count.keys():
+        count[S[i]] += 1
+    else:
+        count[S[i]] = 1
 
-
-ans = 0
-ab = sorted(ab,key = lambda x:x[1])
-ans += 1
-a,b = ab[0]
-cutting = b-1
-for i in range(1,M):
-    a,b = ab[i]
-    if a <= cutting < b:
+flag = True
+for key in count.keys():
+    if count[key] == 2:
         pass
     else:
-        cutting = b-1
-        ans += 1
+        flag = False
+        break
 
-print(ans)
-
-# print(ab)
+if flag:
+    print("Yes")
+else:
+    print("No")

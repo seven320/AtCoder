@@ -12,28 +12,17 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-N,M = LI()
-ab = [[] for i in range(M)]
-for i in range(M):
-    a,b = LI()
-    a -= 1
-    b -= 1
-    ab[i] = [a,b]
-
+N = int(input())
+A = LI()
+B = LI()
 
 ans = 0
-ab = sorted(ab,key = lambda x:x[1])
-ans += 1
-a,b = ab[0]
-cutting = b-1
-for i in range(1,M):
-    a,b = ab[i]
-    if a <= cutting < b:
-        pass
-    else:
-        cutting = b-1
-        ans += 1
+
+right = 0
+for i in range(N):
+    left = min(A[i]-right,B[i])
+    ans += left
+    right = min((B[i]-left),A[i+1])
+    ans += right
 
 print(ans)
-
-# print(ab)

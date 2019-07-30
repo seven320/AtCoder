@@ -11,7 +11,7 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 # v は今見ている頂点，p はｖの親
 def dfs(node,p): # Depth First Serch
-    res[node] = color
+    # res[node] = color
     for new_node,w in graph[node]:
         if new_node == p:continue
         if w == 1:dfs(new_node,node)
