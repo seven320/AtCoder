@@ -9,6 +9,11 @@ N = 10**15
 # 単純な試し割法より早い．
 #　探索オーダーはO（logN）のはず．
 def factorint(N):
+    """
+    Nを作っている素数を辞書で返す．
+    input 100
+    output Counter({2: 2, 5: 2})
+    """
     table = []
     tmp = 2
     while(N > 1):
@@ -21,3 +26,5 @@ def factorint(N):
                 break
     table_ = Counter(table)
     return table_
+
+print(factorint(100))
