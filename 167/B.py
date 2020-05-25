@@ -10,25 +10,16 @@ import collections
 mod = 10**9+7
 sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
-
-
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-# n, a, b = LI()
+A, B, C, K = LI()
 
-
-# ans = pow(2, n, mod) - 1
-# math.factorial()
-
-# print(ans % mod)
-
-def fur(n,r):
-    p,q = 1,1
-    for i in range(r):
-        p = p*(n-i)%mod
-        q = q*(i+1)%mod
-        print(p, q)
-    return p * pow(q,mod-2,mod) % mod
-
-# print((ans - fur(n, a) - fur(n, b)) % mod)
+ans = -mod
+if A >= K:
+    ans = K
+elif A + B >= K:
+    ans = A
+else:
+    ans = A - (K - A - B)
+print(ans)
