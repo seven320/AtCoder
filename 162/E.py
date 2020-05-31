@@ -15,35 +15,28 @@ def LI(): return list(map(int, sys.stdin.readline().split()))
 
 N, K = LI()
 
-dp = [[0 for i in range(K + 1)] for j in range(N+1)]
-# dp 
-# dp[i][j]
-# iは桁数目
-# j は幾つの値か
-for k in range(K):
-    dp[0][k] = 1
+# 逆に考える
+"""
+X = gcd(A_1, A_2,...A_K)
+となるようなXを考えると溶ける
+X = 3の時その個数は
+[K/3]**N
+"""
 
-for n in range(N - 1):
-    for k in range(K):
-        for tmp in range(1, K+1):
-            dp[n+1][math.gcd(tmp, dp[n][k])] = (dp[n][k] + dp[n+1][math.gcd(tmp, dp[n][k])]) % mod
+x_cnt = [0] * (K + 1)
+for x in range(K, 0, -1):
+    # print(x)
+    tmp = pow(K // x, N, mod)
+    for j in range(x + x, K+1, x):
+        tmp -= x_cnt[j]
+    x_cnt[x] = tmp
 
-print(dp)
-ans = sum(dp[-1]) % mod
+ans = 0
+for i in range(1,K+1):
+    ans += i * x_cnt[i]
+    ans %= mod
 print(ans)
 
 
+    
 
-"""
-N, K = 3,2
-
-111
-112
-121
-122
-211
-212
-221
-222
-
-"""

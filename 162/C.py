@@ -23,11 +23,11 @@ for i in range(201):
 
 for i in range(1, K +1):
     for j in range(1, K +1):
-        tmp[math.gcd(i, j)] += 1
+        tmp[gcd(i, j)] += 1
 
 for k in range(1, K +1):
     for key in tmp.keys():
-        ans += math.gcd(key, k) * tmp[key]
+        ans += gcd(key, k) * tmp[key]
 print(ans)
 # ""
 
