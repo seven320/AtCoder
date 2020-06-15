@@ -13,4 +13,5 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
-
+X, Y = LI()
+print(X * Y)

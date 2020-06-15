@@ -14,3 +14,14 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
+N = int(input())
+A = LI()
+A.sort()
+ans = 1
+for a in A:
+    ans *= a
+    if ans > 10**18:
+        ans = -1
+        break
+
+print(ans)

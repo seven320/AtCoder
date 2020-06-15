@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # encoding:utf-8
 import copy
 import random
@@ -14,3 +13,17 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
+X, N = LI()
+p = LI()
+
+ans = mod
+for i in range(100):
+    if X - i not in p:
+        ans = X - i
+        break
+    if X + i not in p:
+        ans = X + i
+        break
+
+print(ans)
+    

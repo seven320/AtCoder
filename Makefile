@@ -2,14 +2,16 @@ file = ""
 
 # example make new file = hoge
 new:
-	mkdir ${file}
-	mkdir ${file}/${file}_a ${file}/${file}_b ${file}/${file}_c ${file}/${file}_d ${file}/${file}_e ${file}/${file}_f
-	cp exam.py ${file}/${file}_a/main.py
-	cp exam.py ${file}/${file}_b/main.py
-	cp exam.py ${file}/${file}_c/main.py
-	cp exam.py ${file}/${file}_d/main.py
-	cp exam.py ${file}/${file}_e/main.py
-	cp exam.py ${file}/${file}_f/main.py
-	code ${file}/*
-	cd ${file}
+	acc new abc1
+	# mkdir ${file}
+	# mkdir ${file}/a ${file}/b ${file}/c ${file}/d ${file}/e ${file}/f
+	# cp exam.py ${file}/a/main.py
+	# cp exam.py ${file}/b/main.py
+	# cp exam.py ${file}/c/main.py
+	# cp exam.py ${file}/d/main.py
+	# cp exam.py ${file}/e/main.py
+	# cp exam.py ${file}/f/main.py
+
+test:
+	oj t -c "python3 main.py"
 

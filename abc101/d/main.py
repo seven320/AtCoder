@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # encoding:utf-8
 import copy
 import random
@@ -13,4 +12,3 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
-

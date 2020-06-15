@@ -1,4 +1,3 @@
-#!/usr/bin/env python3
 # encoding:utf-8
 import copy
 import random
@@ -14,3 +13,17 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
+X, Y = LI()
+ans = True
+if Y % 2 == 1:
+    ans = False
+
+if X * 2 <= Y <= X * 4:
+    pass
+else:
+    ans = False
+
+if ans:
+    print("Yes")
+else:
+    print("No")

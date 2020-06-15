@@ -1,30 +1,22 @@
 #encoding:utf-8
 
 #素因数分解
-from collections import Counter
+import collections
 import time
 from tqdm import tqdm
 
-N = 10**15
+mod = 10**9+7
 # 単純な試し割法より早い．
 #　探索オーダーはO（logN）のはず．
-def factorint(N):
-    """
-    Nを作っている素数を辞書で返す．
-    input 100
-    output Counter({2: 2, 5: 2})
-    """
-    table = []
-    tmp = 2
-    while(N > 1):
-        for i in range(tmp,N+1):
-            if N%i == 0:
-                while N%i == 0:
-                    N = N//i
-                    table.append(i)
-                tmp = i+1
-                break
-    table_ = Counter(table)
-    return table_
+def primes(n): #試し割り法で各素因数とその指数を求める
+    cnt=collections.defaultdict(int)
+    for i in range(2,int(n**0.5)+1):
+        if n%i==0:
+            while n%i==0:
+                cnt[i]+=1
+                n//=i
+    if n!=1:
+        cnt[n]+=1
+    return cnt
 
-print(factorint(100))
+print(primes(mod))

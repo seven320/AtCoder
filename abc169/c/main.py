@@ -7,10 +7,16 @@ import fractions #最小公倍数などはこっち
 import math
 import sys
 import collections
+from decimal import Decimal # 10進数で考慮できる
 
 mod = 10**9+7
 sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
-def LI(): return list(map(int, sys.stdin.readline().split()))
+def LI(): return list(map(float, sys.stdin.readline().split()))
 
+A, B = input().split()
+A = int(A)
+B = Decimal(B)
+
+print(math.floor(A * B))
