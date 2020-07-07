@@ -3,14 +3,13 @@
 AtCoder
 ====
 
-これは電電がAtCoderでの研鑽を記録するためのリポジトリである．
+これは電電がAtCoderでの研鑽を記録するためのリポジトリです．
 
-こちらの
 [AtCoder_problems](https://kenkoooo.com/atcoder/?user=denden12&rivals=&kind=category)
-で進捗が確認できます．
-[AtCoder](https://atcoder.jp/?lang=ja)については公式ページをみてください．
-[dendenのランクページ](https://atcoder.jp/users/denden12)
 
+[AtCoder](https://atcoder.jp/?lang=ja)については公式ページをみてください． 
+
+[dendenのランクページ](https://atcoder.jp/users/denden12)
 
 その他
 [テストケース](https://www.dropbox.com/sh/arnpe0ef5wds8cv/AAAk_SECQ2Nc6SVGii3rHX6Fa?dl=0)
@@ -36,7 +35,6 @@ oj t -c "python3 main.py"
 ```
 acc s
 ```
-
 
 ## Author
 [seven320](https://github.com/seven320)
