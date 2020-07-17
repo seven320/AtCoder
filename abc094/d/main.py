@@ -15,15 +15,20 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-N, K = LI()
-h = [0 for i in range(N)]
-for i in range(N):
-    h[i] = int(input())
+n = int(input())
+a = LI()
 
-h.sort()
-ans = mod
-for i in range(N - K + 1):
-    
-    # print(h[i+K - 1] , h[i])
-    ans = min(ans, h[i + K - 1] - h[i])
-print(ans)
+"""
+nCr = n!/(r! * (n-r)!)
+なのでnは最大値をとりつつrはnの中間の値を撮るのが良さそう．
+"""
+
+a.sort()
+o = a[-1]
+diff = mod
+for i in range(n):
+    if diff > abs(a[i] - o / 2):
+        p = a[i]
+        diff = abs(a[i] - o / 2)
+print(o,p)
+
