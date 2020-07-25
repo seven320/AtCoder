@@ -14,3 +14,26 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
+
+A, B, X = LI()
+
+"""
+Bについての数は一桁ずつ増えていくにしたがって増えるが，
+Aは毎回増える．Bを基準にしつつ，Aを満たす数を探すべき
+"""
+ans = 0
+
+for i in range(1,19):
+    tmp = (X - i * B) // A 
+    if tmp * A + len(str(tmp)) * B <= X:
+        ans = max(ans, tmp)
+
+# tmp = X // A
+# if tmp * A + len(str(tmp)) * B <= X:
+#     ans = max(ans, tmp) 
+
+
+print(min(ans, 10 ** 9))
+
+
+

@@ -14,3 +14,15 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
+
+N = int(input())
+S = str(input())
+
+c = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+
+ans = []
+for i in range(len(S)):
+    n_c = c[((c.index(S[i]))+ N)% 26]
+    ans.append(n_c)
+
+print("".join(ans))
