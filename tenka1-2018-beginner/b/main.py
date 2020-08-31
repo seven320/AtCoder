@@ -15,22 +15,20 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-# N, K = LI()
-# A = LI()
+A, B, K = LI()
 
-# for i in range(N - K):
-#     if A[i] < A[i + K]:
-#         ans = "Yes"
-#     else:
-#         ans = "No"
-#     print(ans)
-
-
-N, K = LI()
-A = LI()
-for i in range(N - K):
-    if A[i] < A[i + K]:
-        ans = "Yes"
+for k in range(K):
+    if k % 2 == 0:
+        if A % 2 == 1:
+            A -= 1
+        c = A // 2
+        A -= c
+        B += c
     else:
-        ans = "No"
-    print(ans)
+        if B % 2 == 1:
+            B -= 1
+        c = B // 2
+        B -= c
+        A += c
+    
+print(A, B)

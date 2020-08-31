@@ -15,21 +15,24 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
+# X = int(input())
+# if 599 >= X:
+#     ans = 8
+# elif 600 <= X <= 799:
+#     ans = 7
+# elif 800 <= X <= 999:
+#     ans = 6
+# elif 1000 <= X <= 1199:
+#     ans = 5
+# elif 1200 <= X <= 1399:
+#     ans = 4
+# elif 1400 <= X <= 1599:
+#     ans = 3
+# elif 1600 <= X <= 1799:
+#     ans = 2
+# else:
+#     ans = 1
+# print(str(ans))
+
 X = int(input())
-if 599 >= X:
-    ans = 8
-elif 600 <= X <= 799:
-    ans = 7
-elif 800 <= X <= 999:
-    ans = 6
-elif 1000 <= X <= 1199:
-    ans = 5
-elif 1200 <= X <= 1399:
-    ans = 4
-elif 1400 <= X <= 1599:
-    ans = 3
-elif 1600 <= X <= 1799:
-    ans = 2
-else:
-    ans = 1
-print(str(ans))
+print(8 - (X - 400) // 200)
