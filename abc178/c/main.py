@@ -15,8 +15,24 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-N, X, T = LI()
+N = int(input())
 
-ans = math.ceil(N / (X))*T
+all = (10 **N) % mod
+no_zero = (9**N) % mod
+no_nine = (9**N) 
+no_zero_nine = 8 ** N
+
+A = 1
+no_zero = 1
+no_nine = 1
+no_zero_nine = 1
+
+for i in range(N):
+    A = A * 10 % mod
+    no_zero = no_zero * 9 % mod
+    no_zero_nine = no_zero_nine * 8 % mod
+
+ans = (A - (no_zero * 2 - no_zero_nine)) % mod
+    
 
 print(ans)

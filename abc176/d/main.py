@@ -14,3 +14,32 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
+
+H, W = LI()
+C_h, C_w = LI()
+D_h, D_w = LI()
+
+S = [[] for i in range(H)]
+for h in range(H):
+    S[h] = list(input())
+
+visited = [[-1 for w in range(W)] for h in range(H)]
+visited[C_h][C_w] = 0
+
+moves = [[0,1],[1,0],[0,-1],[-1,0]]
+
+p = (C_h,C_w)
+
+cost = 0
+
+
+for move in moves:
+    x, y = p
+    n_x = x + move[0]
+    n_y = y + move[1]
+    if 0 <= n_x < H and 0 <= n_y < W:
+        if S[n_x][n_y] == ".":
+            visited[n_x][n_y] = cost
+
+if visited[D_h][D_w] != -1:
+    ans = visited[D_h][D_w]

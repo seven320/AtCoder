@@ -15,9 +15,28 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
 
-N = int(input())
+S = str(input())
 
-if N % 9 == 0:
+exams = [i*8 for i in range(125)]
+c = collections.Counter(list(S))
+ans = False
+for e in exams:
+    cnt = collections.Counter(str(e).zfill(3))
+    if "0" in cnt.keys():
+        continue
+
+    for key in cnt.keys():
+        if cnt[key] <= c[key]:
+            pass
+        else:
+            break
+    else:
+        ans = True
+        break
+if int(S) in [8, 16, 61, 24,42, 32,23, 48,84, 56,65, 64,46, 72,27, 88, 96, 69]:
+    ans = True
+
+if ans:
     print("Yes")
 else:
     print("No")

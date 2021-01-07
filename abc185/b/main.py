@@ -14,9 +14,27 @@ sys.setrecursionlimit(mod) # 再帰回数上限はでdefault1000
 
 d = collections.deque()
 def LI(): return list(map(int, sys.stdin.readline().split()))
+AB = []
 
-N, X, T = LI()
+N, M, T = LI()
+for m in range(M):
+    a,b = LI()
+    AB.append((a,b))
 
-ans = math.ceil(N / (X))*T
+status = N
+l_time = 0
+ans = True
+for m in range(M):
+    a,b = AB[m]
+    if status - (a - l_time) <= 0:
+        ans = False
+        break
+    status =  min(status - (a - l_time) + (b-a), N)
+    l_time = b
 
-print(ans)
+if status - (T - l_time) <= 0:
+    ans = False
+if ans:
+    print("Yes")
+else:
+    print("No")
